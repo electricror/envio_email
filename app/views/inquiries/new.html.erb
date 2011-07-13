@@ -1,0 +1,27 @@
+<%= form_for @inquiry do |f| %>
+
+   <%= error_messages_for @inquiry %>
+
+  <div class="field">
+
+    <%= select_tag "payment", options_for_select([ "-- Escolha 1 motivo --","Gostaria de tirar uma dúvida", "Gostaria de registrar uma reclamação", "Quero dar minha opnião", "Gostaria de relatar um problema no sistema ", "Outros"], "-- Escolha 1 motivo --") %>
+
+  </div>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "your name" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email, :placeholder => "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :message, :placeholder => "Explain the problem/question in detail" %>
+  </div>
+
+
+
+  <p><%= f.submit  "Send Message", :class => "button" %></p>
+<% end %>
+
